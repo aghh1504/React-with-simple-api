@@ -19,7 +19,7 @@ class App extends Component {
     const url = `http://api.giphy.com/v1/gifs/search?q=${this.state.term}&api_key=${api_key}`;
     fetch(url)
       .then(response => response.json())
-      .then(data => this.setState({ img: data.data[0].images.fixed_height.url }))
+      .then(data => this.setState({ term: '', img: data.data[0].images.fixed_height.url }))
       .catch(e => console.log('error', e));
   }
 
